@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        body {
+            background-color: #f5f5f5;
+            text-align: center;
+            box-sizing: border-box;
+
+        }
+
+        p {
+            padding: 2px;
+            margin: 0;
+        }
+
+        .task {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        #tasklist {
+            display: flex;
+            justify-content: space-between;
+            background-color: antiquewhite;
+            padding: 10px 50px;
+            width: 250px;
+        }
+
+        #tasklist div p {
+            text-align: left;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Hello World</h2>
+    <h4>Today Date Time : <span id="todayDate"></span></h4>
+    <input type="text" id="taskName" name="taskName" placeholder="Enter task" required>
+    <input type="button" id="add" value="Add">
+    <div id="taskData"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
