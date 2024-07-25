@@ -5,22 +5,22 @@ console.log(date);
 date = date.toString().split(' ');
 
 
-const todayDateTime = date[2] + " " + date[1] + " " + date[3] +" " + date[4];
+const todayDateTime = date[2] + " " + date[1] + " " + date[3] + " " + date[4];
 document.querySelector("#todayDate").innerHTML = todayDateTime;
 
 function addTask() {
     document.querySelector('#add').addEventListener("click", () => {
         const taskName = document.querySelector('#taskName').value;
         console.log(taskName);
-        if(taskName === '' || taskName === null){
+        if (taskName === '' || taskName === null) {
             alert("Please enter task name");
         }
-        else{
+        else {
             const task = { id: Math.floor(Math.random() * 10000), name: taskName, date: todayDateTime };
-        taskItems.push(task);
-        localStorage.setItem("tasks", JSON.stringify(taskItems));
-        console.log(taskItems);
-        location.reload();
+            taskItems.push(task);
+            localStorage.setItem("tasks", JSON.stringify(taskItems));
+            console.log(taskItems);
+            location.reload();
         }
     })
 }
@@ -31,30 +31,26 @@ function allTasks() {
     taskItems.forEach(e => {
         const items = `
             <div class="task">
-    <div id="tasklist">
-        <div>
-            <p>${e.name}</p>
-            <p>${e.date}</p>
-        </div>
-        <div>
-            <p><a href="#" >Edit</a></p>
-            <p><a href="#" onclick=deleteFunction(${e.id})>Delete</a></p>
-        </div>
-    </div>
-
-</div> `;
+                <div id="tasklist">
+                    <div>
+                        <p>${e.name}</p>
+                        <p>${e.date}</p>
+                    </div>
+                    <div>
+                        <p><a href="#" >Edit</a></p>
+                        <p><a href="#" onclick=deleteFunction(${e.id})>Delete</a></p>
+                    </div>
+                </div>
+            </div> `;
 
         taskData.innerHTML += items;
-
     });
 
 }
 function deleteFunction(id) {
     console.log(id);
-    const check = taskItems.filter(task => task.id == id);
-    console.log(check);
+    const check = taskItems.filter( task => task.id == id);
     taskItems.splice(check, 1);
-    console.log(check);
     localStorage.setItem("tasks", JSON.stringify(taskItems));
     location.reload();
 
