@@ -49,12 +49,14 @@ function allTasks() {
 }
 function deleteFunction(id) {
     console.log(id);
-    const check = taskItems.filter( task => task.id == id);
-    taskItems.splice(check, 1);
-    localStorage.setItem("tasks", JSON.stringify(taskItems));
-    location.reload();
-
+    const index = taskItems.findIndex(task => task.id == id);
+    if (index !== -1) {
+        taskItems.splice(index, 1);
+        localStorage.setItem("tasks", JSON.stringify(taskItems));
+        location.reload();
+    }
 }
+
 window.onload = function () {
     allTasks();
     addTask();
