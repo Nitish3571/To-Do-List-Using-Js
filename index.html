@@ -41,14 +41,24 @@
         a {
             text-decoration: none;
         }
+        input[type=text]{
+            height: 30px;
+            margin-top: 10px;
+        }
+        input[type=button]{
+            height: 30px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 
 <body>
     <h2>To Do App</h2>
     <h4>Today Date Time : <span id="todayDate"></span></h4>
+    
     <input type="text" id="taskName" name="taskName" placeholder="Enter task" required>
     <input type="button" id="add" value="Add">
+    <input type="button" id="search" value="Search">
     <div id="taskData"></div>
     <script src="script.js"></script>
 </body>
