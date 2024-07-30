@@ -21,7 +21,7 @@ function addTask() {
         name: taskName,
         date: todayDateTime,
       };
-      taskItems.push(task);
+      taskItems.unshift(task);
       localStorage.setItem("tasks", JSON.stringify(taskItems));
       alert("task add successfully");
       console.log(taskItems);
